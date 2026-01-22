@@ -1,0 +1,127 @@
+/* ===== GLOBAL STYLES ===== */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ===== SHARED CARD CONTAINER ===== */
+.card {
+  background-color: rgba(255, 228, 196, 0.95);
+  border-radius: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  width: 100%;
+  max-width: 550px;
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* State helper for JavaScript */
+.active-flex {
+  display: flex !important;
+}
+
+/* ===== TEXT & INPUTS ===== */
+h1 { color: #0a6345; margin-bottom: 1rem; }
+h2 { color: #3d0a0a; margin-bottom: 1.5rem; }
+
+.in {
+  width: 100%;
+  max-width: 400px;
+  height: 3.5rem;
+  padding: 0 1.2rem;
+  margin-bottom: 1rem;
+  border-radius: 0.8rem;
+  border: 2px solid transparent;
+  background: white;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.in:focus {
+  border-color: #0f7e2a;
+  outline: none;
+  box-shadow: 0 0 12px rgba(15, 126, 42, 0.2);
+}
+
+.p-status { margin-top: 1rem; font-weight: bold; color: #185688; }
+
+/* ===== BUTTONS ===== */
+.btn-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Primary Button */
+.btn { background: #185688; color: white; width: 100%; max-width: 250px; }
+.btn:hover { background: #0a2236; transform: translateY(-2px); }
+
+/* Game Action Buttons */
+.btnn, .bttn, .bln, .kp { width: 120px; }
+
+.btnn, .bttn { background: #012020; color: white; }
+.btnn:hover, .bttn:hover { background: #85540b; }
+
+.bln, .kp { background: white; color: black; border: 2px solid #000; }
+.bln:hover, .kp:hover { background: black; color: white; }
+
+/* ===== GAME SPECIFICS ===== */
+.hnj {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 4px solid #ff4d4d;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.vs-text { color: #0c5681; font-style: italic; }
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVENESS ===== */
+@media (max-width: 480px) {
+  .card { padding: 1.5rem; }
+  .h { font-size: 1.8rem; }
+  .avatar { width: 85px; height: 85px; }
+  .btn-row { flex-direction: row; } /* Keep side-by-side for small buttons */
+  .btnn, .bttn, .bln, .kp { width: 100px; font-size: 0.9rem; }
+}
